@@ -10,8 +10,6 @@ By creating DTO's we reduce the chances of our API breaking as we refactor our d
 
 **Your API's should never receive or return domain objects**
 
-***
-
 ### Creating Our DTO For The Customer Model
 
 Recall our Customer Model seen in the code below
@@ -150,7 +148,7 @@ We can do this using the **Auto Mapper**
 
 To install automapper simply run this command through the NuGet Package Manager: Install-Package automapper -version:4.1
 
--
+***
 
 To do this we need to add a MappingProfile.cs class to the App_Start directory:
 

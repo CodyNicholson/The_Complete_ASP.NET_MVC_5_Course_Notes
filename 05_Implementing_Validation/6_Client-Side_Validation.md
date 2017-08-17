@@ -5,8 +5,6 @@ Having server-side validation is great for making our application secure, but we
 1. Immediate feedback
 2. No waste of server-side resources
 
--
-
 ### Enabling Client-Side Validation
 
 If you look at your BundleConfig.cs file in the App_Start folder you will see this:

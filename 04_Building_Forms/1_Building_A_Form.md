@@ -47,8 +47,6 @@ namespace Vidly.Controllers
 
 At the bottom you will see the New() action that will take us to the form we will create
 
--
-
 ### Creating The Form
 
 We can create a new view for the form that we have to name after the Action we added to the Customers class: "New.cshtml"

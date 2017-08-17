@@ -29,7 +29,7 @@ namespace Vidly.Models
 
 This class gets the customer, checks the birthdate, and acts based on the value put into the birthdate input
 
--
+***
 
 We include this Custom Validation in our Birthdate input by using a Data Annotation:
 

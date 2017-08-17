@@ -10,7 +10,7 @@ In the list of templates select MVC, do not deploy to Azure Cloud
 
 In **App_Data** our database files will be stored
 
--
+***
 
 In **App_Start** there are a few classes that are called when the application starts like RouteConfig, which is where our routing rules are defined
 
@@ -30,11 +30,11 @@ defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optiona
 
 Which says that if **only** the controller "movies" is provided in the http request, just call the action "Index"
 
--
+***
 
 In the **Content** folder we store out CSS files, images, and other client side assets
 
--
+***
 
 In the **Controllers** folder we store all of our controller .cs files, you will see that three have already been created for us as a part of the template
 
@@ -44,19 +44,19 @@ The **HomeController.cs** which as all the actions relating to the home page
 
 The **ManageController.cs** which provides a number of actions for handling requests for a users profile, like changing a password, enabling two-factor authentication, using social logins like facebook, etc
 
--
+***
 
 We have the **fonts** folder which should probably be included under content since it is a client side asset
 
--
+***
 
 We have the **Model** folder where all of our domain classes will be stored
 
--
+***
 
 Next, we have the **Scripts** folder where all of our javascript files will be stored
 
--
+***
 
 Finally, we have the **Views** folder
 

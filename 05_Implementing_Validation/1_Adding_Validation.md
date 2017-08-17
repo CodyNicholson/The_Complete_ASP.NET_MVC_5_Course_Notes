@@ -2,8 +2,6 @@
 
 We used Data Annotations to make certain fields required and to set string lengths in our models, but we can also use Data Annotations for validation
 
--
-
 ## Three Steps Of Adding Validation
 
 1. Add Data Annotations to your model classes that require validation

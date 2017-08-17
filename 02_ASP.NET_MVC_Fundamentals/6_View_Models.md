@@ -6,7 +6,7 @@ We have been able to display the Name of our movie, "Shrek!", in our application
 
 To add more model properties to our application we use a **View Model**
 
--
+***
 
 A **View Model** is a model specifically built for a view
 

@@ -6,7 +6,7 @@ We do this by creating a migration and then running it on the database
 
 To do this we will use the **package manager console** a lot which you can find in Visual Studio under: Tools -> NuGet Package Manager -> Package Manager Console
 
--
+***
 
 We need to **enable migrations** the first time we want to use them by running the "enable-migrations" command in the package manager console. If it worked you should see a "Migrations" folder in your solution explorer. All of the migrations you add will be stored in this folder.
 

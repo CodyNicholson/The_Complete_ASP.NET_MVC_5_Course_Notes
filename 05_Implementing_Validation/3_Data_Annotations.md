@@ -11,7 +11,7 @@ So far we have looked at the Data Annotations [Required] and [StringLength(255)]
 - [URL]
 - [RegularExpression("...")]
 
--
+***
 
 All of these Data Annotations each have their own specific validation message, but we can overwrite those messages with our own unique message in the model like this:
 

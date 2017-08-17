@@ -6,7 +6,7 @@ The traditional way to design a database is to create the tables first and then 
 
 Database -> Entity Framework -> Domain Classes
 
--
+***
 
 ### Code-First
 

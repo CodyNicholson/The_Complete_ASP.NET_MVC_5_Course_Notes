@@ -14,13 +14,9 @@ These classes have properties and methods that purely represent the application 
 
 They are plain old CLR objects, or POCO
 
--
-
 ### View
 
 The **View** is the HTML markup that we display to the user
-
--
 
 ### Controller
 
@@ -29,8 +25,6 @@ The **Controller** is responsible for handling and HTTP Requests
 For example, if we send a request to our app at "vidly.com" our request will look like: "http://vidly.com/movies", then our controller will get all the movies from the database, put them in a view, and return the view to the client of the browser
 
 Methods of a controller are called **actions**
-
--
 
 ### Router
 
