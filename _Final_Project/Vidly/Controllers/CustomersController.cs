@@ -26,9 +26,7 @@ namespace Vidly.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //When this is called Entity Framework will not query the database - this is called deferred execution
-
-            return View(customers);
+            return View();
         }
 
         public ActionResult Details(int id)
