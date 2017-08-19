@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44333</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -276,6 +276,14 @@
     <Compile Include="Migrations\201701170139511_AddedEditableMovies.Designer.cs">
       <DependentUpon>201701170139511_AddedEditableMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708182114379_SeedUsers.cs" />
+    <Compile Include="Migrations\201708182114379_SeedUsers.Designer.cs">
+      <DependentUpon>201708182114379_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708182338084_AddDrivingLicenseToIdentityModel.cs" />
+    <Compile Include="Migrations\201708182338084_AddDrivingLicenseToIdentityModel.Designer.cs">
+      <DependentUpon>201708182338084_AddDrivingLicenseToIdentityModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -285,6 +293,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
@@ -622,12 +631,13 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
-    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\List.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
+    <Content Include="Views\Movies\ReadOnlyList.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -675,6 +685,12 @@
     <EmbeddedResource Include="Migrations\201701170139511_AddedEditableMovies.resx">
       <DependentUpon>201701170139511_AddedEditableMovies.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708182114379_SeedUsers.resx">
+      <DependentUpon>201708182114379_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708182338084_AddDrivingLicenseToIdentityModel.resx">
+      <DependentUpon>201708182338084_AddDrivingLicenseToIdentityModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -694,7 +710,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>61167</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61167/</IISUrl>
+          <IISUrl>https://localhost:44333/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
