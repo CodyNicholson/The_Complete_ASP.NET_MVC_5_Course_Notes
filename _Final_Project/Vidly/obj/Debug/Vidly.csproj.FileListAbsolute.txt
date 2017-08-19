@@ -358,3 +358,4 @@ C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\obj\
 C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\obj\Debug\Vidly.Migrations.SeedUsers.resources
 C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\obj\Debug\Vidly.Migrations.AddDrivingLicenseToIdentityModel.resources
+C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\obj\Debug\Vidly.Migrations.AddPhoneNumberToIdentityModel.resources
