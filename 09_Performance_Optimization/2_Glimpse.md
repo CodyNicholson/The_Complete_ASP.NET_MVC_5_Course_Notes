@@ -1,0 +1,7 @@
+# Glimpse
+
+**Glimpse** is a tool for getting real time diagnostics and insights into our application. Open package manager console and run: **install-package glimpse.mvc5**. Then run: **install-package glimpse.ef6**. Now run the application and go to the url: **/glimpse.axd**. Glimpse adds this endpoint in our application where we can turn glimpse on or off. The glimpse dashboard is only accessible locally for security reasons.
+
+Basically, glimpse puts a cookie on your machine and this cookie is sent back and forth with each request. On the server, glimpse has a module that intercepts every request. If it finds this cookie it will render diagnostics information for us.
+
+When we turn glimpse on and go to a page in our application we will see a little bar on the bottom of the screen. Here we have three tabs: The HTTP, Host, and AJAX. If we hover over any of these tabs we will get more details. If we click on the "g" icon in the bottom right corner we will get tons of data in various tabs. We can look at the items in the cache here, the configuration settings used on the server, the HTTP request, routes, and so on. On this page we are using Ajax to populate the list of customers. It is our DataTable plugin that is querying our API to get the list of customers. We can see this by going to the Ajax tab in the "g" menu. We can inspect this request. Now that we are inspecting the request, all the other tabs in the "g" menu will only display data relating to that request.
