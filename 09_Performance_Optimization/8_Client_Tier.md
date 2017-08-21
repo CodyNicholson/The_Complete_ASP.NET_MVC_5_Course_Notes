@@ -1,0 +1,7 @@
+# Client Tier
+
+The optimizations we apply in the Client tier are based on simple principles. We have the client and the server. Since these machines are located in different geographical areas, we should reduce the number of requests from the client to the server and also the size of the response
+
+We can apply this principle in various areas. For example, when building our API we should aim to keep out details lightweight. If we are building a public API that many other applications will use, that's a different story. You may want to return a bit more data, but otherwise if this API is internal and is used only by the frontend of the application, avoid returning any unnecessary properties. This same principle can be applied to our JavaScript and CSS files. To reduce the number of HTTP requests we combine them. To reduce the response size we compress the result. That's where our bundles come into the picture.
+
+When we put our JavaScript and CSS files into these bundles, ASP.NET will combine and compress them at runtime. In **Layout.cshtml** we have a reference to one of our bundles. **Another optimization technique is to put the scripts near the end of the body section because sometimes it takes a bit of time to download these scripts and to give the user a fast and smooth experience, we want to render all the markup first**. If we put the scripts on the top, then the browser resources will be used to run the scripts and the user will see any of the content during that time.
