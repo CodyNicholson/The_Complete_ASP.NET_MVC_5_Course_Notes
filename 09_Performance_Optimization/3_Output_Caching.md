@@ -1,0 +1,15 @@
+# Output Caching
+
+Assuming that our database schema and our queries are in the right shape and form we're going to transition to the Application or middle tier. There are a number of techniques we can use to optimize this tier. One that gives us the most gain is **Output Caching**.
+
+Imagine we put the date and time on our homepage. By doing this, every time we load the page we will be querying a database to get the date and time. ASP.NET will render the page and then store the rendered HTML in the Cache. Next time someone visits this page, MVC framework will serve this page from the cache, so the query will not be executed again.
+
+To enable caching on our homepage we will put the **OutputCache** action filter into our **HomeController.cs** file. When we apply this to an action, it will be executed by MVC framework before and/or after the action depending on how it is implemented. We can also apply this to the entire controller. We can also set a **Duration** parameter to the action filter declaration. The duration is the number of seconds that the page will wait before updating the data again from the cache. This means that if we make the duration an hour, then we can refresh as much as we want but the time will not update again until an hour has passed, or until we clear the cache and hard reload.
+
+We can cache the data on the server or on the client. If this view is specific to a given user, you put it on the client. Otherwise, you put it on the server. We do this by adding the **Location** parameter. Since the time should apply to all users, we should store it on the server by setting the location parameter equal to **OutputCacheLocation.Server**.
+
+The last parameter we will discuss is **VaryByParam**. If this action takes one or more parameters, and the output cache changes based on the value of these parameters, we can cache each output separately. Let's say in this action we have a parameter called genre. If we set VaryByParam equal to "genre", then for every genre we will have a different version of this page stored in the cache. Or, if we have multiple parameters, we can use a "*" which means for any combination of these parameters we'll have a different version of the page in the cache.
+
+**Premature optimization is the root of all evils**. Do not assume that your application will require caching before testing it yourself. Do this only when your performance tests are proving that this page is slow and you will benefit from caching it.
+
+The downside of caching is that you may end up displaying stale data to users. Is we add a new customer but don't update the cache, the user will never see it. Sometimes, to prevent stale data from being displayed to the user we may want to deliberately disable caching. Since different browsers have different caching policies, and at times they may cache the results of some of the requests to our application. To disable caching we set the **Duration** parameter of the **OutputCache** action filter to 0. We do not need the **Location** parameter in this case. We set the **VaryByParam** parameter to "*". Finally, we set a new parameter called **NoStore** equal to true.
