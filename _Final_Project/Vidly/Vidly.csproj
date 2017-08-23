@@ -104,6 +104,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -232,6 +233,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\API\CustomersController.cs" />
     <Compile Include="Controllers\API\MoviesController.cs" />
+    <Compile Include="Controllers\API\NewRentalController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -240,6 +242,7 @@
     <Compile Include="DTOs\GenreDto.cs" />
     <Compile Include="DTOs\MembershipTypeDto.cs" />
     <Compile Include="DTOs\MovieDto.cs" />
+    <Compile Include="DTOs\NewRentalDto.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -304,6 +307,10 @@
     <Compile Include="Migrations\201708191419349_AddPhoneNumberToIdentityModel.Designer.cs">
       <DependentUpon>201708191419349_AddPhoneNumberToIdentityModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708221449355_AddRentalsTable.cs" />
+    <Compile Include="Migrations\201708221449355_AddRentalsTable.Designer.cs">
+      <DependentUpon>201708221449355_AddRentalsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -313,6 +320,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
@@ -659,7 +667,9 @@
     <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\NewRental\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -713,6 +723,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708191419349_AddPhoneNumberToIdentityModel.resx">
       <DependentUpon>201708191419349_AddPhoneNumberToIdentityModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708221449355_AddRentalsTable.resx">
+      <DependentUpon>201708221449355_AddRentalsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
