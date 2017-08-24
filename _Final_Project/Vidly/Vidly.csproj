@@ -238,6 +238,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="DTOs\CustomerDto.cs" />
     <Compile Include="DTOs\GenreDto.cs" />
     <Compile Include="DTOs\MembershipTypeDto.cs" />
@@ -310,6 +311,10 @@
     <Compile Include="Migrations\201708221449355_AddRentalsTable.cs" />
     <Compile Include="Migrations\201708221449355_AddRentalsTable.Designer.cs">
       <DependentUpon>201708221449355_AddRentalsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231945057_AddNumberAvailableToMovies.cs" />
+    <Compile Include="Migrations\201708231945057_AddNumberAvailableToMovies.Designer.cs">
+      <DependentUpon>201708231945057_AddNumberAvailableToMovies.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -666,10 +671,9 @@
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
+    <Content Include="Views\Rentals\New.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\NewRental\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -726,6 +730,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708221449355_AddRentalsTable.resx">
       <DependentUpon>201708221449355_AddRentalsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231945057_AddNumberAvailableToMovies.resx">
+      <DependentUpon>201708231945057_AddNumberAvailableToMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

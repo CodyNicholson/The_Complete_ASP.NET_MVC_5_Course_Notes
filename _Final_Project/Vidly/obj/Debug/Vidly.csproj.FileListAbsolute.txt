@@ -365,3 +365,4 @@ C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\bin\
 C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\bin\Glimpse.EF6.dll
 C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\bin\Glimpse.Mvc5.dll
 C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\obj\Debug\Vidly.Migrations.AddRentalsTable.resources
+C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\obj\Debug\Vidly.Migrations.AddNumberAvailableToMovies.resources

@@ -155,3 +155,88 @@ What if we add a new property to our ***Movies** class called **NumberAvailable*
 
 ### Code
 
+First we add the **NumberAvailable** property to the movie class:
+
+```
+    public class Movie
+    {
+        // This is a plain CLR object/POKO which represents the state and behavior of our application in terms of its problem domain
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        [Display(Name = "Genre")]
+        [Required]
+        public byte GenreId { get; set; }
+
+        [Required]
+        public Genre Genre { get; set; }
+
+        [Display(Name = "Release Date")]
+        public DateTime ReleaseDate { get; set; }
+
+        [Display(Name = "Date Added")]
+        public DateTime DateAdded { get; set; }
+
+        [Display(Name = "Number in Stock")]
+        public byte NumberInStock { get; set; }
+
+        public byte NumberAvailable { get; set; }
+    }
+```
+
+We then add a new code-first migration *but* we modify the generated **Up()** method to include an **Sql()** call that sets the **NumberAvailable** equal to the **NumberInStock**.
+
+```
+    public partial class AddNumberAvailableToMovies : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Movies", "NumberAvailable", c => c.Byte(nullable: false));
+
+            Sql("UPDATE Movies SET NumberAvailable = NumberInStock");
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.Movies", "NumberAvailable");
+        }
+    }
+```
+
+Then we modify the **CreateNewRental()** method in the **NewTentalsController.cs** file by adding a line to decrement the **NumberAvailable** property of the movie that is being rented:
+
+```
+    public class NewRentalController : ApiController
+    {
+        private ApplicationDbContext _context;
+
+        [HttpPost]
+        public IHttpActionResult CreateNewRentals(NewRentalDto newRental)
+        {
+            var customer = _context.Customers.Single(
+                c => c.Id == newRental.CustomerId);
+
+            var movies = _context.Movies.Where(
+                m => newRental.MovieIds.Contains(m.Id));
+
+            foreach ( var movie in movies)
+            {
+                movie.NumberAvailable--;
+
+                var rental = new Rental
+                {
+                    Customer = customer,
+                    Movie = movie,
+                    DateRented = DateTime.Now
+                };
+
+                _context.Rentals.Add(rental);
+            }
+
+            _context.SaveChanges();
+
+            return Ok();
+        }
+    }
+```
