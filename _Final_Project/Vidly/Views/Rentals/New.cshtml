@@ -6,18 +6,18 @@
 
 <h2>New Rentals Form</h2>
 
-<form>
+<form id="newRental">
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
-            <input id="customer" type="text" value="" class="frm-control" />
+            <input id="customer" name="customer" data-rule-validCustomer="true" required type="text" value="" class="frm-control" />
         </div>
     </div>
 
     <div class="form-group">
         <label>Movie</label>
         <div class="tt-container">
-            <input id="movie" type="text" value="" class="frm-control" />
+            <input id="movie" name="movie" type="text" value="" class="frm-control" />
         </div>
     </div>
 
@@ -32,6 +32,7 @@
 
 @section scripts
 {
+    @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
             var customers = new Bloodhound({
@@ -82,20 +83,39 @@
                     vm.movieIds.push(movie.id);
                 });
 
-            $("#newRental").submit(function (e) {
-                e.preventDefault();
+            $.validate.addMethod("validCustomer", function () {
+                return vm.customerId && vm.customerId !== 0;
+            }, "Please select a valid customer.");
 
-                $.ajax({
-                    url: "/api/newRentals",
-                    method: "post",
-                    data: vm
-                })
-                    .done(function () {
-                        console.log("done");
+            $.validate.addMethod("atLeastOneMovie", function () {
+                return vm.movieIds.length > 0;
+            }, "Please select at least one.");
+
+            var validator = $("#newRental").validate({
+                submitHandler: function (e) {
+                    e.preventDefault();
+
+                    $.ajax({
+                        url: "/api/newRentals",
+                        method: "post",
+                        data: vm
                     })
-                    .fail(function () {
+                        .done(function () {
+                            toastr.success("Rentals successfully recorded.");
 
-                    });
+                            $("#customer").typeahead("val", "");
+                            $("#movie").typeahead("val", "");
+                            $("#movies").empty();
+
+                            vm = { movieIds: [] };
+
+                            validator.resetForm();
+                        })
+                        .fail(function () {
+                            toastr.error("Something caused an error.");
+                        });
+                    return false;
+                }
             });
         });
 </script>
