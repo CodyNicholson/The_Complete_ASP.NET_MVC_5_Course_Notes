@@ -42,3 +42,4 @@ C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\obj\
 C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\obj\Release\Vidly.csproj.CoreCompileInputs.cache
 C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\obj\Release\Vidly.dll
 C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\obj\Release\Vidly.pdb
+C:\Users\Cody\GitHub\The_Complete_ASP.NET_MVC_5_Course\_Final_Project\Vidly\bin\Elmah.dll
